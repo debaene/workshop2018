@@ -143,5 +143,61 @@ Author: Thierry Debaene <thierry@e6410-server.debaene.eu>
 Date:   Thu Nov 8 10:52:27 2018 +0100
 
     initial commit
+[thierry@e6410-server workshop]$ $ vi file 
+[thierry@e6410-server workshop]$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   file
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	git-workshop-command
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[thierry@e6410-server workshop]$ git add .
+[thierry@e6410-server workshop]$ git commit -m "New line to file"
+[master 26943cc] New line to file
+ Committer: Thierry Debaene <thierry@e6410-server.debaene.eu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 148 insertions(+)
+ create mode 100644 git-workshop-command
+[thierry@e6410-server workshop]$ git status
+On branch master
+nothing to commit, working tree clean
+[thierry@e6410-server workshop]$ git remote add origin https://github.com/debaene/workshop2018.git
+[thierry@e6410-server workshop]$ git remote -v
+origin	https://github.com/debaene/workshop2018.git (fetch)
+origin	https://github.com/debaene/workshop2018.git (push)
+[thierry@e6410-server workshop]$ git push --set-upstream origin master
+Username for 'https://github.com': debaene
+Password for 'https://debaene@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 2.19 KiB | 1.09 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/debaene/workshop2018/pull/new/master
+remote: 
+To https://github.com/debaene/workshop2018.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
 [thierry@e6410-server workshop]$ 
+
 
