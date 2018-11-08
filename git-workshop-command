@@ -322,5 +322,45 @@ Een lijntje text
 Een tweede lijntje text
 Een derde lijntje text
 Een lijntje van Thierry
+[thierry@e6410-server workshop]$ $ vi file 
+[thierry@e6410-server workshop]$ git add .
+[thierry@e6410-server workshop]$ git commit -m "Mijn is beter"
+[master 8c8e2d1] Mijn is beter
+ Committer: Thierry Debaene <thierry@e6410-server.debaene.eu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 63 insertions(+)
+[thierry@e6410-server workshop]$ git push
+Username for 'https://github.com': debaene
+Password for 'https://debaene@github.com': 
+To https://github.com/debaene/workshop2018.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/debaene/workshop2018.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[thierry@e6410-server workshop]$ $ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/debaene/workshop2018
+   b384326..736036f  master     -> origin/master
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+Automatic merge failed; fix conflicts and then commit the result.
 [thierry@e6410-server workshop]$ 
 
