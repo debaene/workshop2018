@@ -1,0 +1,147 @@
+thierry-etc-bashrc
+entering etc-bashrc
+etc-bashrc 1000, gn: thierry, un:thierry
+0007
+[thierry@e6410-server workshop]$ su -
+Password: 
+etc-profile 0, gn: root, un:root
+0027
+double sourcing, etc-bashrc
+entering etc-bashrc
+root-profile
+root-bashrc
+root-etc-bashrc
+entering etc-bashrc
+[root@e6410-server ~]# dnf install git
+Last metadata expiration check: 0:00:00 ago on Thu 08 Nov 2018 10:50:00 AM CET.
+Dependencies resolved.
+======================================================================================================================================================
+ Package                                 Arch                          Version                                   Repository                      Size
+======================================================================================================================================================
+Installing:
+ git                                     x86_64                        2.17.2-1.fc28                             updates                        221 k
+Installing dependencies:
+ git-core                                x86_64                        2.17.2-1.fc28                             updates                        4.0 M
+ git-core-doc                            noarch                        2.17.2-1.fc28                             updates                        2.3 M
+ perl-Error                              noarch                        1:0.17025-2.fc28                          fedora                          45 k
+ perl-Git                                noarch                        2.17.2-1.fc28                             updates                         73 k
+ perl-TermReadKey                        x86_64                        2.37-7.fc28                               fedora                          39 k
+
+Transaction Summary
+======================================================================================================================================================
+Install  6 Packages
+
+Total download size: 6.7 M
+Installed size: 37 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/6): git-2.17.2-1.fc28.x86_64.rpm                                                                                   311 kB/s | 221 kB     00:00    
+(2/6): perl-Git-2.17.2-1.fc28.noarch.rpm                                                                              657 kB/s |  73 kB     00:00    
+(3/6): perl-TermReadKey-2.37-7.fc28.x86_64.rpm                                                                         33 kB/s |  39 kB     00:01    
+(4/6): perl-Error-0.17025-2.fc28.noarch.rpm                                                                           185 kB/s |  45 kB     00:00    
+(5/6): git-core-2.17.2-1.fc28.x86_64.rpm                                                                              1.5 MB/s | 4.0 MB     00:02    
+(6/6): git-core-doc-2.17.2-1.fc28.noarch.rpm                                                                          615 kB/s | 2.3 MB     00:03    
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                 1.3 MB/s | 6.7 MB     00:05     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                              1/1 
+  Installing       : git-core-2.17.2-1.fc28.x86_64                                                                                                1/6 
+  Installing       : git-core-doc-2.17.2-1.fc28.noarch                                                                                            2/6 
+  Installing       : perl-Error-1:0.17025-2.fc28.noarch                                                                                           3/6 
+  Installing       : perl-TermReadKey-2.37-7.fc28.x86_64                                                                                          4/6 
+  Installing       : perl-Git-2.17.2-1.fc28.noarch                                                                                                5/6 
+  Installing       : git-2.17.2-1.fc28.x86_64                                                                                                     6/6 
+  Running scriptlet: git-2.17.2-1.fc28.x86_64                                                                                                     6/6 
+  Verifying        : git-2.17.2-1.fc28.x86_64                                                                                                     1/6 
+  Verifying        : git-core-2.17.2-1.fc28.x86_64                                                                                                2/6 
+  Verifying        : git-core-doc-2.17.2-1.fc28.noarch                                                                                            3/6 
+  Verifying        : perl-Git-2.17.2-1.fc28.noarch                                                                                                4/6 
+  Verifying        : perl-TermReadKey-2.37-7.fc28.x86_64                                                                                          5/6 
+  Verifying        : perl-Error-1:0.17025-2.fc28.noarch                                                                                           6/6 
+
+Installed:
+  git.x86_64 2.17.2-1.fc28         git-core.x86_64 2.17.2-1.fc28          git-core-doc.noarch 2.17.2-1.fc28    perl-Error.noarch 1:0.17025-2.fc28   
+  perl-Git.noarch 2.17.2-1.fc28    perl-TermReadKey.x86_64 2.37-7.fc28   
+
+Complete!
+[root@e6410-server ~]# 
+
+
+
+
+thierry-etc-bashrc
+entering etc-bashrc
+etc-bashrc 1000, gn: thierry, un:thierry
+0007
+[thierry@e6410-server ~]$ mkdir workshop
+[thierry@e6410-server ~]$ cd workshop/
+[thierry@e6410-server workshop]$ touch file{123}
+[thierry@e6410-server workshop]$ ll
+total 0
+-rw-rw----. 1 thierry thierry 0 Nov  8 10:46 file{123}
+[thierry@e6410-server workshop]$ rm file\{123\} 
+[thierry@e6410-server workshop]$ touch file[123]
+[thierry@e6410-server workshop]$ ll
+total 0
+-rw-rw----. 1 thierry thierry 0 Nov  8 10:46 'file[123]'
+[thierry@e6410-server workshop]$ rm f
+rm: cannot remove 'f': No such file or directory
+[thierry@e6410-server workshop]$ echo "Een lijntje text" file
+Een lijntje text file
+[thierry@e6410-server workshop]$ echo "Een lijntje text" > file
+[thierry@e6410-server workshop]$ ll
+total 4
+-rw-rw----. 1 thierry thierry 17 Nov  8 10:47  file
+-rw-rw----. 1 thierry thierry  0 Nov  8 10:46 'file[123]'
+[thierry@e6410-server workshop]$ rm file\[123\] 
+[thierry@e6410-server workshop]$ ll
+total 4
+-rw-rw----. 1 thierry thierry 17 Nov  8 10:47 file
+[thierry@e6410-server workshop]$ cat file 
+Een lijntje text
+[thierry@e6410-server workshop]$ git init
+bash: git: command not found
+[thierry@e6410-server workshop]$ dnf install git
+Error: This command has to be run under the root user.
+[thierry@e6410-server workshop]$ git init
+Initialized empty Git repository in /home/thierry/workshop/.git/
+[thierry@e6410-server workshop]$ git add file
+[thierry@e6410-server workshop]$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   file
+
+[thierry@e6410-server workshop]$ git commit -m "initial commit"
+[master (root-commit) ae529bd] initial commit
+ Committer: Thierry Debaene <thierry@e6410-server.debaene.eu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file
+[thierry@e6410-server workshop]$ git log
+commit ae529bd08c4e5db21548ef76bb0506d5f737beff (HEAD -> master)
+Author: Thierry Debaene <thierry@e6410-server.debaene.eu>
+Date:   Thu Nov 8 10:52:27 2018 +0100
+
+    initial commit
+[thierry@e6410-server workshop]$ 
+
