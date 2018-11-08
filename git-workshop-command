@@ -198,6 +198,67 @@ remote:
 To https://github.com/debaene/workshop2018.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
-[thierry@e6410-server workshop]$ 
+[thierry@e6410-server workshop]$ $ vi file 
+[thierry@e6410-server workshop]$ git commit -m "With 3 lines"
+On branch master
+Your branch is up to date with 'origin/master'.
 
+Changes not staged for commit:
+	modified:   file
+	modified:   git-workshop-command
+
+Untracked files:
+	.gitignore
+
+no changes added to commit
+[thierry@e6410-server workshop]$ git push
+Username for 'https://github.com': debaene
+Password for 'https://debaene@github.com': 
+Everything up-to-date
+[thierry@e6410-server workshop]$ vi file 
+[thierry@e6410-server workshop]$ git add .
+[thierry@e6410-server workshop]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .gitignore
+	modified:   file
+	modified:   git-workshop-command
+
+[thierry@e6410-server workshop]$ git push
+Username for 'https://github.com': debaene
+Password for 'https://debaene@github.com': 
+Everything up-to-date
+[thierry@e6410-server workshop]$ git commit -m "With 3 lines"
+[master bf40994] With 3 lines
+ Committer: Thierry Debaene <thierry@e6410-server.debaene.eu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 59 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+[thierry@e6410-server workshop]$ git push
+Username for 'https://github.com': debaene
+Password for 'https://debaene@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.09 KiB | 1.09 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/debaene/workshop2018.git
+   26943cc..bf40994  master -> master
+[thierry@e6410-server workshop]$ 
 
