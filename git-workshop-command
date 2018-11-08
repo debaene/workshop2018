@@ -260,5 +260,67 @@ Total 5 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/debaene/workshop2018.git
    26943cc..bf40994  master -> master
+[thierry@e6410-server workshop]$ $ ll -a
+total 40
+drwxrwx---.  3 thierry thierry  4096 Nov  8 11:34 .
+drwx--x---+ 39 thierry thierry  4096 Nov  8 11:31 ..
+-rw-rw----.  1 thierry thierry    64 Nov  8 11:30 file
+drwxrwx---.  8 thierry thierry  4096 Nov  8 11:33 .git
+-rw-rw----.  1 thierry thierry    21 Nov  8 11:17 .gitignore
+-rw-rw----.  1 thierry thierry 12665 Nov  8 11:34 git-workshop-command
+[thierry@e6410-server workshop]$ git add .
+[thierry@e6410-server workshop]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   git-workshop-command
+
+[thierry@e6410-server workshop]$ git commit -m "Ignore file updated"
+[master f35edeb] Ignore file updated
+ Committer: Thierry Debaene <thierry@e6410-server.debaene.eu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 62 insertions(+), 1 deletion(-)
+[thierry@e6410-server workshop]$ git push
+Username for 'https://github.com': debaene
+Password for 'https://debaene@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 694 bytes | 694.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/debaene/workshop2018.git
+   bf40994..f35edeb  master -> master
+[thierry@e6410-server workshop]$ $ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/debaene/workshop2018
+   f35edeb..b384326  master     -> origin/master
+Updating f35edeb..b384326
+Fast-forward
+ file | 1 +
+ 1 file changed, 1 insertion(+)
+[thierry@e6410-server workshop]$ cat file 
+Een lijntje text
+Een tweede lijntje text
+Een derde lijntje text
+Een lijntje van Thierry
 [thierry@e6410-server workshop]$ 
 
